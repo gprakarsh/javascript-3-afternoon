@@ -170,4 +170,26 @@ else if (this.reports.length>=101){
 
 //Code Here
 
+class Machine{
+  constructor(){
+    this.wear_and_tear_count=0;
+    this.widgets_made_count=0;
+    this.needs_reboot=false;
+  }
+  makeWidgets(num){
+  this.widgets_made_count+=num;
+  let i=num/50;
+  this.wear_and_tear_count+=i;
+  }
+  fixMachine(){
+    this.needs_reboot=true;
+  }
+  reboot(){
+    return ()=>{
+      this.wear_and_tear_count-=10;
+      this.needs_reboot=false
+    } 
+  }
+}
+
 
